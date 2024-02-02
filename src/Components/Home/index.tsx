@@ -6,8 +6,9 @@ import Logo from "../Section/logo";
 
 const Home: React.FC = () => {
   return (
-    <div className="  text-white  h-full p-5 flex flex-col gap-[50px]">
+    <div className="bg-heroBg  text-white  h-full p-5 flex flex-col gap-[50px]">
       <div className="max-w-[1440px]  flex flex-col gap-[70px]">
+        <Logo />
         <Sec1 />
         <div className="flex flex-col gap-[30px]">
           <Sec2 />

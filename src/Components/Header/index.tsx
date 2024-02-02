@@ -9,11 +9,16 @@ function Header() {
   };
 
   return (
-    <section>
-      <header className="relative z-[51] flex w-full justify-center  pt-10 px-5 text-white">
+    <section className="bg-headerBg">
+      <header className="relative  z-[51] flex w-full justify-center  pt-10 px-5 text-white">
         <div className="flex w-full  items-center justify-between text-inherit">
           <a aria-label="Navigate to the homepage" href="/">
-            <img src="/svg/armory.svg" alt="" />
+            <div className="flex ">
+              <div>NEWS</div>
+              <div id="ticker-title-1706875622090" className="ticker-title">
+                <span className="ml-2 font-bold">|</span>
+              </div>
+            </div>
           </a>
 
           <nav className="hidden lg:block">
@@ -159,10 +164,13 @@ function Header() {
           </button>
         </div>
         {isMobileMenuOpen && (
-          <div className="fixed inset-0 bg-blue-600">
-            <div className=" px-5">{/* <Logo /> */}</div>
-
-            <nav className="absolute top-0 left-0 right-0  pt-16 pb-6 px-4 shadow-lg">
+          <div className="fixed inset-0 bg-headerBg">
+            <nav className="absolute top-0 left-0 right-0 pt-16 pb-6 px-4 shadow-lg w-screen max-w-[50%]">
+              <div className=" px-5">
+                <div className="font-bold text-2xl ">
+                  <div>NEWS</div>
+                </div>
+              </div>
               <ul className="flex flex-col text-left gap-5 pt-20 text-2xl softie_1 font-black">
                 <li>
                   <a
@@ -204,7 +212,7 @@ function Header() {
                     Kiếm tiền
                   </a>
                 </li>
-                <div className="flex items-center justify-center gap-2">
+                <div className="flex items-center gap-5">
                   <a
                     target="_blank"
                     href="https://www.facebook.com/wolfcapital.vn"

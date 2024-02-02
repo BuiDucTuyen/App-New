@@ -2,7 +2,7 @@ import React from "react";
 
 const Logo = () => {
   return (
-    <div className=" flex  w-full  md:px-10 mt-[30px]">
+    <div className=" flex bg-headerBg  w-full  md:px-10 ">
       <div className="  max-w-[1440px] flex select-none gap-10 overflow-x-hidden">
         <div className="marquee-container flex flex-col md:flex-row gap-20">
           <ul className="flex flex-col md:flex-row min-w-full run flex-shrink-0 content-around items-center gap-20 md:animate-marqueeScroll">

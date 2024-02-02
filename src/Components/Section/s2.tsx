@@ -10,7 +10,7 @@ const Sec2: React.FC = () => {
           src="/image/top-echange-in-vietnamese4.png"
           alt=""
         />
-        <div className="flex gap-3">
+        <div className="flex gap-3 rounded-md overflow-hidden shadow-md p-1">
           <img
             className="max-w-[65%] transition-transform transform hover:scale-105 hover:shadow-md"
             src="/image/i1.jpg"

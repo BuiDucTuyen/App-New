@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        heroBg: "url('../public/image/bggg.avif')",
+        heroBg: "url('../public/image/cup-near-cloth-twig.jpg')",
+        headerBg: "url('../public/image/bggg.avif')",
         "gradient-radial": "radial-gradient(circle, #3498db, transparent 30%)",
       },
     },

@@ -4,7 +4,7 @@ import { IoIosMail } from "react-icons/io";
 import { MdLocationPin } from "react-icons/md";
 const Footter = () => {
   return (
-    <footer className="relative bg-top flex w-full items-center justify-center overflow-hidden  px-4 pb-12 pt-12 md:px-10 md:pb-44 md:pt-20">
+    <footer className="relative bg-top bg-headerBg flex w-full items-center justify-center overflow-hidden  px-4 pb-12 pt-12 md:px-10 md:pb-44 md:pt-20 ">
       <div className="absolute h-full w-full brightness-75"></div>
       <div className="z-10 flex w-full max-w-5xl flex-col gap-y-12 font-medium text-white md:flex-row text-left">
         <dl className="w-full ">
