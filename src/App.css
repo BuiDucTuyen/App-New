@@ -36,3 +36,103 @@
     transform: rotate(360deg);
   }
 }
+
+.softie_1 {
+  font-family: "Softie1", Fallback, sans-serif;
+}
+
+.softie_2 {
+  font-family: "Softie2", Fallback, sans-serif;
+}
+
+.softie_3 {
+  font-family: "Softie3", Fallback, sans-serif;
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+.animate-shine {
+  animation-name: shine;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainbow-animation {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 0 100%;
+  }
+}
+
+@keyframes bounceAround {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
+}
+@keyframes loadIn {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
+}
+@keyframes shaker {
+  0% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
+
+.run {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: marqueeScroll 50s linear infinite;
+  animation-play-state: running;
+}
+
+/* .before\:bg-radial::before {
+  content: var(--tw-content);
+  background-image: radial-gradient(
+    50% 50% at 50% 50%,
+    #000000 48%,
+    #000000 72%,
+    #000000 88%
+  );
+} */
+@keyframes opacityln {
+  100% {
+    opacity: translateX(0);
+  }
+}

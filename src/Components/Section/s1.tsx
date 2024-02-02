@@ -1,116 +1,85 @@
 import React from "react";
+import { FaCalendar } from "react-icons/fa";
 
 const Sec1: React.FC = () => {
   return (
     <section className="">
-      <div className=" flex mx-auto justify-between gap-4">
-        <div className="flex flex-col gap-5">
-          <div className="rt-image">
-            <a href="https://wolfcapital.vn/tim-hieu-ve-jupiter-nen-tang-dex-aggregator-tren-solana/">
-              <img
-                decoding="async"
-                width="700"
-                height="800"
-                src="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg"
-                className="attachment-neeon-size2 size-neeon-size2 wp-post-image lazyautosizes ls-is-cached lazyloaded"
-                alt=""
-                data-src="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg"
-                data-srcset="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg 1280w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-300x169.jpg 300w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-1024x576.jpg 1024w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-768x432.jpg 768w"
-                data-sizes="auto"
-                sizes="764px"
-                srcSet="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg 1280w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-300x169.jpg 300w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-1024x576.jpg 1024w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-768x432.jpg 768w"
-              />
-            </a>
-          </div>
-          <div className="text-left max-w-[600px]">
-            <h1 className="text-xl">Tìm hiểu về Jupiter</h1>
-            <p className="text-[15px] mt-2">
-              Tổng quan về Jupiter Jupiter (JUP) được biết đến là nền tảng
-              Liquidity Aggregator được xây dựng và phát triển.
-            </p>
+      <nav className="flex flex-col lg:flex-row justify-between gap-5 ">
+        <div className="flex  flex-col max-w-full lg:max-w-[55%] text-left gap-5">
+          <img
+            className="w-full transition-transform transform hover:scale-105"
+            src="/image/i1.jpg"
+            alt="Ảnh"
+          />
+          <h1 className="text-2xl ">
+            LSDFi phát triển rực rỡ, eUSD của Lybra thống trị với 70%
+          </h1>
+          <p className="text-[16px] ">
+            Thế giới DeFi đã chứng kiến một cột mốc quan trọng khác khi giá trị
+            thị trường của các stablecoin.
+          </p>
+          <div className="flex gap-5">
+            <span className="font-bold">BY ADMIN</span>
+            <span className="flex items-center gap-2">
+              <FaCalendar />
+              <span>20/20/2024</span>
+            </span>
           </div>
         </div>
-        <div className="flex flex-col gap-5">
-          <div className="flex gap-5 justify-center items-center">
-            <div className="rt-image">
-              <a href="https://wolfcapital.vn/tim-hieu-ve-jupiter-nen-tang-dex-aggregator-tren-solana/">
-                <img
-                  decoding="async"
-                  width="300"
-                  height="300"
-                  src="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg"
-                  className="attachment-neeon-size2 size-neeon-size2 wp-post-image lazyautosizes ls-is-cached lazyloaded"
-                  alt=""
-                  data-src="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg"
-                  data-srcset="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg 1280w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-300x169.jpg 300w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-1024x576.jpg 1024w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-768x432.jpg 768w"
-                  data-sizes="auto"
-                  sizes="764px"
-                  srcSet="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg 1280w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-300x169.jpg 300w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-1024x576.jpg 1024w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-768x432.jpg 768w"
-                />
-              </a>
-            </div>
-            <div className="text-left max-w-[300px]">
-              <h1 className="text-xl">Tìm hiểu về Jupiter</h1>
-              <p className="text-[15px] mt-2">
-                Tổng quan về Jupiter Jupiter (JUP) được biết đến là nền tảng
-                Liquidity Aggregator được xây dựng và phát triển.
-              </p>
+        <div className="flex flex-col max-w-full gap-3 lg:max-w-[45%] text-left mt-5 lg:mt-0">
+          <div className="flex justify-between gap-3">
+            <img
+              className="transition-transform transform hover:scale-105"
+              src="/image/images.jpg"
+              alt="ảnh"
+            />
+            <div className="flex flex-col gap-3">
+              <h1 className="text-xl">
+                Tìm hiểu về Jupiter – Nền tảng DEX Aggregator trên Solana
+              </h1>
+              <span className="font-bold">BY ADMIN</span>
+              <span className="flex items-center gap-2">
+                <FaCalendar />
+                <span>20/20/2024</span>
+              </span>
             </div>
           </div>
-          <div className="flex gap-5 justify-center items-center border-t-2 border-white">
-            <div className="rt-image">
-              <a href="https://wolfcapital.vn/tim-hieu-ve-jupiter-nen-tang-dex-aggregator-tren-solana/">
-                <img
-                  decoding="async"
-                  width="300"
-                  height="300"
-                  src="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg"
-                  className="attachment-neeon-size2 size-neeon-size2 wp-post-image lazyautosizes ls-is-cached lazyloaded"
-                  alt=""
-                  data-src="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg"
-                  data-srcset="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg 1280w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-300x169.jpg 300w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-1024x576.jpg 1024w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-768x432.jpg 768w"
-                  data-sizes="auto"
-                  sizes="764px"
-                  srcSet="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg 1280w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-300x169.jpg 300w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-1024x576.jpg 1024w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-768x432.jpg 768w"
-                />
-              </a>
-            </div>
-            <div className="text-left max-w-[300px]">
-              <h1 className="text-xl">Tìm hiểu về Jupiter</h1>
-              <p className="text-[15px] mt-2">
-                Tổng quan về Jupiter Jupiter (JUP) được biết đến là nền tảng
-                Liquidity Aggregator được xây dựng và phát triển.
-              </p>
+          <div className="flex justify-between gap-3">
+            <img
+              className="transition-transform transform hover:scale-105"
+              src="/image/images.jpg"
+              alt="ảnh"
+            />
+            <div className="flex flex-col gap-3">
+              <h1 className="text-xl">
+                Tìm hiểu về Jupiter – Nền tảng DEX Aggregator trên Solana
+              </h1>
+              <span className="font-bold">BY ADMIN</span>
+              <span className="flex items-center gap-2">
+                <FaCalendar />
+                <span>20/20/2024</span>
+              </span>
             </div>
           </div>
-          <div className="flex gap-5 justify-center items-center border-t-2 border-white">
-            <div className="rt-image">
-              <a href="https://wolfcapital.vn/tim-hieu-ve-jupiter-nen-tang-dex-aggregator-tren-solana/">
-                <img
-                  decoding="async"
-                  width="300"
-                  height="300"
-                  src="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg"
-                  className="attachment-neeon-size2 size-neeon-size2 wp-post-image lazyautosizes ls-is-cached lazyloaded"
-                  alt=""
-                  data-src="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg"
-                  data-srcset="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg 1280w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-300x169.jpg 300w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-1024x576.jpg 1024w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-768x432.jpg 768w"
-                  data-sizes="auto"
-                  sizes="764px"
-                  srcSet="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg 1280w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-300x169.jpg 300w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-1024x576.jpg 1024w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-768x432.jpg 768w"
-                />
-              </a>
-            </div>
-            <div className="text-left max-w-[300px]">
-              <h1 className="text-xl">Tìm hiểu về Jupiter</h1>
-              <p className="text-[15px] mt-2">
-                Tổng quan về Jupiter Jupiter (JUP) được biết đến là nền tảng
-                Liquidity Aggregator được xây dựng và phát triển.
-              </p>
+          <div className="flex justify-between gap-3">
+            <img
+              className="transition-transform transform hover:scale-105"
+              src="/image/images.jpg"
+              alt="ảnh"
+            />
+            <div className="flex flex-col gap-3">
+              <h1 className="text-xl">
+                Tìm hiểu về Jupiter – Nền tảng DEX Aggregator trên Solana
+              </h1>
+              <span className="font-bold">BY ADMIN</span>
+              <span className="flex items-center gap-2">
+                <FaCalendar />
+                <span>20/20/2024</span>
+              </span>
             </div>
           </div>
         </div>
-      </div>
+      </nav>
     </section>
   );
 };

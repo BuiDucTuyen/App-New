@@ -1,20 +1,22 @@
 import React from "react";
-
+import { FaPhone } from "react-icons/fa6";
+import { IoIosMail } from "react-icons/io";
+import { MdLocationPin } from "react-icons/md";
 const Footter = () => {
   return (
-    <footer className="relative bg-top flex w-full items-center justify-center overflow-hidden bg-heroBg  px-4 pb-12 pt-12 md:px-10 md:pb-44 md:pt-20">
+    <footer className="relative bg-top flex w-full items-center justify-center overflow-hidden  px-4 pb-12 pt-12 md:px-10 md:pb-44 md:pt-20">
       <div className="absolute h-full w-full brightness-75"></div>
       <div className="z-10 flex w-full max-w-5xl flex-col gap-y-12 font-medium text-white md:flex-row text-left">
         <dl className="w-full ">
           <dt className="mb-1 border-b-2 border-white/10 pb-2 text-2xl font-semibold md:border-none md:pb-1 md:text-xl">
-            Product
+            Danh mục
           </dt>
           <dd className="mb-2 first-of-type:pt-2">
             <a
               className="opacity-75 transition-colors hover:opacity-100"
               href="/pricing"
             >
-              Pricing
+              Tin tức
             </a>
           </dd>
           <dd className="mb-2 first-of-type:pt-2">
@@ -24,7 +26,7 @@ const Footter = () => {
               className="opacity-75 transition-colors hover:opacity-100"
               href=""
             >
-              Changelog
+              Kiến thức
             </a>
           </dd>
           <dd className="mb-2 first-of-type:pt-2">
@@ -34,7 +36,7 @@ const Footter = () => {
               className="opacity-75 transition-colors hover:opacity-100"
               href=""
             >
-              Documentation
+              Kiếm tiền
             </a>
           </dd>
           <dd className="mb-2 first-of-type:pt-2">
@@ -44,20 +46,20 @@ const Footter = () => {
               className="opacity-75 transition-colors hover:opacity-100"
               href=""
             >
-              Log in
+              PTKT
             </a>
           </dd>
         </dl>
         <dl className="w-full">
           <dt className="mb-1 border-b-2 border-white/10 pb-2 text-2xl font-semibold md:border-none md:pb-1 md:text-xl">
-            Company
+            Partner
           </dt>
           <dd className="mb-2 first-of-type:pt-2">
             <a
               className="opacity-75 transition-colors hover:opacity-100"
               href="/approach"
             >
-              Approach
+              H2 Capital
             </a>
           </dd>
           <dd className="mb-2 first-of-type:pt-2">
@@ -79,23 +81,18 @@ const Footter = () => {
         </dl>
         <dl className="w-full">
           <dt className="mb-1 border-b-2 border-white/10 pb-2 text-2xl font-semibold md:border-none md:pb-1 md:text-xl">
-            Legal
+            Liên hệ
           </dt>
-          <dd className="mb-2 first-of-type:pt-2">
-            <a
-              className="opacity-75 transition-colors hover:opacity-100"
-              href="/privacy-policy"
-            >
-              Privacy Policy
-            </a>
-          </dd>
-          <dd className="mb-2 first-of-type:pt-2">
-            <a
-              className="opacity-75 transition-colors hover:opacity-100"
-              href="/terms-of-service"
-            >
-              Terms of service
-            </a>
+          <dd className="mb-2 first-of-type:pt-2 flex flex-col gap-5">
+            <div className="">
+              <MdLocationPin />
+            </div>
+            <div>
+              <FaPhone />
+            </div>
+            <div>
+              <IoIosMail />
+            </div>
           </dd>
         </dl>
         <div className="w-full md:min-w-[360px]">
@@ -119,7 +116,7 @@ const Footter = () => {
           </p>
           <div className="mt-4 flex items-center justify-between gap-6 md:justify-start">
             <p className="text-sm opacity-75">
-              © <span>2023</span> Makelog
+              © <span>2024</span> Báo
             </p>
             <a
               target="_blank"

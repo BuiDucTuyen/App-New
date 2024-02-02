@@ -1,52 +1,41 @@
 import React from "react";
-
+import { FaCalendar } from "react-icons/fa";
 const Sec2: React.FC = () => {
   return (
-    <section className="">
-      <div className="flex  justify-between gap-5">
-        <div className="flex flex-col gap-5">
-          <h2 className="text-xl text-left">Kiến thức</h2>
+    <section className="container">
+      <nav className="flex flex-col text-left max-w-full gap-5">
+        <h1 className="text-2xl">Kiến thức</h1>
+        <img
+          className="transition-transform transform hover:scale-105"
+          src="/image/top-echange-in-vietnamese4.png"
+          alt=""
+        />
+        <div className="flex gap-3">
           <img
-            src="http://wolfcapital.vn/wp-content/uploads/2023/10/banner-quang-cao-okxbitgetbybit-2.png"
-            alt="Header Before Ad"
-            className="w-[1000px] h-[180px]"
+            className="max-w-[65%] transition-transform transform hover:scale-105 hover:shadow-md"
+            src="/image/i1.jpg"
+            alt=""
           />
-          <div className="flex justify-between gap-2">
-            <img
-              src="https://wolfcapital.vn/wp-content/uploads/2024/01/Altlayer1.jpg"
-              alt=""
-              width="300"
-              height="300"
-            />
-            <div className="text-left ">
-              <h1 className="text-2xl">
-                Tổng quan dự án AltLayer – Dự án launchpool thứ 45 trên Binance
-              </h1>
-              <p className="text-[15px] mt-2 max-w-[500px]">
-                Dự án AltLayer đưa ra giải pháp để cải thiện việc lãng phí tài
-                nguyên khi các dApps có chung một mục đích sử dụng mà lại chạy
-                trên nhiều chain khác nhau. 1. AltLayer là gì AltLayer.
-              </p>
+          <div className="flex flex-col gap-5 max-w-[35%]">
+            <h1 className="text-3xl">
+              Tổng quan dự án AltLayer – Dự án launchpool thứ 45 trên Binance
+            </h1>
+            <p className="text-[18px]">
+              Dự án AltLayer đưa ra giải pháp để cải thiện việc lãng phí tài
+              nguyên khi các dApps có chung một mục đích sử dụng mà lại chạy
+              trên nhiều chain khác nhau. 1. AltLayer là gì AltLayer.
+            </p>
+            <div className="flex gap-3">
+              {" "}
+              <span className="font-bold">BY ADMIN</span>
+              <span className="flex items-center gap-2">
+                <FaCalendar />
+                <span>20/20/2024</span>
+              </span>
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-5">
-          <h2 className="text-xl text-left">Bài viết gần đây</h2>
-          <img
-            decoding="async"
-            width="320"
-            height="320"
-            src="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg"
-            className="attachment-neeon-size2 size-neeon-size2 wp-post-image lazyautosizes ls-is-cached lazyloaded"
-            alt=""
-            data-src="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg"
-            data-srcset="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg 1280w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-300x169.jpg 300w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-1024x576.jpg 1024w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-768x432.jpg 768w"
-            data-sizes="auto"
-            sizes="764px"
-            srcSet="https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1.jpg 1280w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-300x169.jpg 300w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-1024x576.jpg 1024w, https://wolfcapital.vn/wp-content/uploads/2024/01/Jupiter1-768x432.jpg 768w"
-          />
-        </div>
-      </div>
+      </nav>
     </section>
   );
 };
