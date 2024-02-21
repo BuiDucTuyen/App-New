@@ -1,22 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
     console.log(1);
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <section className="bg-headerBg">
-      <header className="relative  z-[51] flex w-full justify-center  pt-10 px-5 text-white">
-        <div className="flex w-full  items-center justify-between text-inherit">
+      <header className="relative z-[51]  flex w-full justify-center  pt-10 px-5 text-white">
+        <div className="flex w-full fixed top-0   shadow', { 'py-4': isScrolled } px-5 py-5   items-center justify-between text-inherit">
           <a aria-label="Navigate to the homepage" href="/">
             <div className="flex ">
-              <div>NEWS</div>
-              <div id="ticker-title-1706875622090" className="ticker-title">
-                <span className="ml-2 font-bold">|</span>
+              <div>
+                <img src="/svg/armory.svg" alt="" />
               </div>
             </div>
           </a>
@@ -24,36 +36,15 @@ function Header() {
           <nav className="hidden lg:block">
             <ul className="flex items-center gap-5 text-lg softie_1 font-black">
               <li>
-                <a
-                  className="transition-opacity hover:opacity-80"
-                  href="/pricing"
-                >
-                  Trang chủ
-                </a>
+                <Link to="/">Trang chủ</Link>
               </li>
               <li>
-                <a
-                  className="transition-opacity hover:opacity-80"
-                  href="/approach"
-                >
-                  Tin tức
-                </a>
+                <Link to="/TinTuc">Tin tức</Link>
               </li>
               <li>
-                <a className="transition-opacity hover:opacity-80" href="/blog">
-                  Kiến thức
-                </a>
+                <Link to="/KienThuc">Kiến thức</Link>
               </li>
-              <li>
-                <a className="transition-opacity hover:opacity-80" href="/blog">
-                  PTKT
-                </a>
-              </li>
-              <li>
-                <a className="transition-opacity hover:opacity-80" href="/blog">
-                  Kiếm tiền
-                </a>
-              </li>
+
               <div className="flex items-center justify-center gap-2">
                 <a
                   target="_blank"
@@ -166,16 +157,16 @@ function Header() {
         {isMobileMenuOpen && (
           <div className="fixed inset-0 bg-headerBg">
             <nav className="absolute top-0 left-0 right-0 pt-16 pb-6 px-4 shadow-lg w-screen max-w-[50%]">
-              <div className=" px-5">
-                <div className="font-bold text-2xl ">
-                  <div>NEWS</div>
+              <div className=" ">
+                <div>
+                  <img src="/svg/armory.svg" alt="" />
                 </div>
               </div>
               <ul className="flex flex-col text-left gap-5 pt-20 text-2xl softie_1 font-black">
                 <li>
                   <a
                     className="transition-opacity hover:opacity-80"
-                    href="/pricing"
+                    href="/TrangChu"
                   >
                     Trang chủ
                   </a>
@@ -183,7 +174,7 @@ function Header() {
                 <li>
                   <a
                     className="transition-opacity hover:opacity-80"
-                    href="/approach"
+                    href="/TinTuc"
                   >
                     Tin tức
                   </a>
@@ -191,27 +182,12 @@ function Header() {
                 <li>
                   <a
                     className="transition-opacity hover:opacity-80"
-                    href="/blog"
+                    href="/KienThuc"
                   >
                     Kiến thức
                   </a>
                 </li>
-                <li>
-                  <a
-                    className="transition-opacity hover:opacity-80"
-                    href="/blog"
-                  >
-                    PTKT
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="transition-opacity hover:opacity-80"
-                    href="/blog"
-                  >
-                    Kiếm tiền
-                  </a>
-                </li>
+
                 <div className="flex items-center gap-5">
                   <a
                     target="_blank"

@@ -1,72 +1,56 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaCalendar } from "react-icons/fa";
-const articles = [
-  {
-    imageUrl: "/image/images.jpg",
-    title: "Tìm hiểu về Jupiter – Nền tảng DEX Aggregator trên Solana",
-    author: "ADMIN",
-    date: "20/20/2024",
-  },
-  {
-    imageUrl: "/image/images.jpg",
-    title: "Tìm hiểu về Jupiter – Nền tảng DEX Aggregator trên Solana",
-    author: "ADMIN",
-    date: "20/20/2024",
-  },
-  {
-    imageUrl: "/image/images.jpg",
-    title: "Tìm hiểu về Jupiter – Nền tảng DEX Aggregator trên Solana",
-    author: "ADMIN",
-    date: "20/20/2024",
-  },
-];
+import { Link } from "react-router-dom";
+import Sec1_1 from "./s1_1";
+
 const Sec1: React.FC = () => {
+  const [postData, setPostData] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:1337/api/homes?populate=*&filter[id_gte]=2"
+        );
+        const data = await response.json();
+        setPostData(data.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <section className="">
       <nav className="flex flex-col lg:flex-row justify-between gap-5 ">
-        <div className="flex  flex-col max-w-full lg:max-w-[55%] text-left gap-5 rounded-md overflow-hidden shadow-md p-1">
-          <img
-            className="w-full transition-transform transform hover:scale-105"
-            src="/image/i1.jpg"
-            alt="Ảnh"
-          />
-          <h1 className="text-2xl ">
-            LSDFi phát triển rực rỡ, eUSD của Lybra thống trị với 70%
-          </h1>
-          <p className="text-[16px] ">
-            Thế giới DeFi đã chứng kiến một cột mốc quan trọng khác khi giá trị
-            thị trường của các stablecoin.
-          </p>
-          <div className="flex gap-5">
-            <span className="font-bold">BY ADMIN</span>
-            <span className="flex items-center gap-2">
-              <FaCalendar />
-              <span>20/20/2024</span>
-            </span>
-          </div>
+        <div className="flex flex-col max-w-full gap-5 lg:max-w-[55%] text-left rounded-md overflow-hidden shadow-md p-1">
+          {postData &&
+            postData.map((post: any) => (
+              <Link key={post.id} className="flex flex-col gap-5" to="/BaiViet">
+                <img
+                  className="w-full transition-transform transform hover:scale-105"
+                  src={
+                    "http://localhost:1337" +
+                    post.attributes.img.data[0].attributes.url
+                  }
+                  alt="Ảnh"
+                />
+                <h1 className="text-2xl ">{post.attributes.title}</h1>
+                <p className="text-[16px] ">{post.attributes.content}</p>
+                <div className="flex gap-5">
+                  <span className="font-bold">BY ADMIN</span>
+                  <span className="flex items-center gap-2">
+                    <FaCalendar />
+                    <span>{post.attributes.date}</span>
+                  </span>
+                </div>
+              </Link>
+            ))}
         </div>
-        <div className="flex flex-col max-w-full gap-3 lg:max-w-[45%] text-left mt-5 lg:mt-0 ">
-          {articles.map((article, index) => (
-            <div
-              key={index}
-              className="flex justify-between gap-3 rounded-md overflow-hidden shadow-md p-1"
-            >
-              <img
-                className="transition-transform transform hover:scale-105"
-                src={article.imageUrl}
-                alt="ảnh"
-              />
-              <div className="flex flex-col gap-3 ">
-                <h1 className="text-xl">{article.title}</h1>
-                <span className="font-bold">BY {article.author}</span>
-                <span className="flex items-center gap-2">
-                  <FaCalendar />
-                  <span>{article.date}</span>
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
+
+        <Sec1_1 />
       </nav>
     </section>
   );

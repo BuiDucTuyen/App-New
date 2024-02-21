@@ -25,11 +25,11 @@ const articles = [
 const Sec3: React.FC = () => {
   return (
     <section className="">
-      <nav className="flex justify-between items-center gap-3 text-left">
+      <nav className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         {articles.map((article, index) => (
           <div
             key={index}
-            className="flex flex-col max-w-[33%] gap-3 rounded-md overflow-hidden shadow-md p-1 pb-2"
+            className="flex flex-col gap-3 rounded-md overflow-hidden shadow-md p-1 pb-2"
           >
             <img
               className="transition-transform transform hover:scale-105"

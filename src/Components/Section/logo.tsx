@@ -2,10 +2,10 @@ import React from "react";
 
 const Logo = () => {
   return (
-    <div className=" flex bg-headerBg  w-full  md:px-10 ">
-      <div className="  max-w-[1440px] flex select-none gap-10 overflow-x-hidden">
-        <div className="marquee-container flex flex-col md:flex-row gap-20">
-          <ul className="flex flex-col md:flex-row min-w-full run flex-shrink-0 content-around items-center gap-20 md:animate-marqueeScroll">
+    <div className="flex bg-headerBg">
+      <div className="max-w-[1440px] mx-auto flex select-none gap-10 overflow-x-hidden">
+        <div className="marquee-container flex flex-row gap-20">
+          <ul className="flex flex-row min-w-full run flex-shrink-0 content-around items-center gap-20 md:animate-marqueeScroll">
             {renderLogo("Armory", "/svg/armory.svg", 148, 40)}
             {renderLogo("Code Combat", "/svg/code combat.svg", 153, 34)}
             {renderLogo("Orb", "/svg/orb.c2a0ba4d.svg", 113, 46)}
@@ -20,7 +20,7 @@ const Logo = () => {
               32
             )}
           </ul>
-          <ul className="flex flex-col md:flex-row min-w-full run flex-shrink-0 content-around items-center gap-20 md:animate-marqueeScroll">
+          <ul className="flex flex-row min-w-full run flex-shrink-0 content-around items-center gap-20 md:animate-marqueeScroll">
             {renderLogo("Armory", "/svg/armory.svg", 148, 40)}
             {renderLogo("Code Combat", "/svg/code combat.svg", 153, 34)}
             {renderLogo("Orb", "/svg/orb.c2a0ba4d.svg", 113, 46)}
