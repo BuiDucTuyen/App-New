@@ -1,56 +1,71 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaCalendar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const articles = [
-  {
-    imageUrl: "/image/images.jpg",
-    title: "Tìm hiểu về Jupiter – Nền tảng DEX Aggregator trên Solana",
-    author: "ADMIN",
-    date: "20/20/2024",
-  },
-  {
-    imageUrl: "/image/images.jpg",
-    title: "Tìm hiểu về Jupiter – Nền tảng DEX Aggregator trên Solana",
-    author: "ADMIN",
-    date: "20/20/2024",
-  },
-  {
-    imageUrl: "/image/images.jpg",
-    title: "Tìm hiểu về Jupiter – Nền tảng DEX Aggregator trên Solana",
-    author: "ADMIN",
-    date: "20/20/2024",
-  },
-];
+interface KienthucData {
+  id: number;
+  attributes: {
+    title_kienthuc: string;
+    date_kienthuc: string;
+    content_kienthuc: string;
+    content_detail_kienthuc: string;
+  };
+}
 
 const Sec3: React.FC = () => {
+  const [data, setData] = useState<KienthucData[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "http://103.141.141.31:1337/api/home-kienthucs"
+        );
+        const jsonData = await response.json();
+        const filteredData = jsonData.data.filter(
+          (item: KienthucData) => item.id > 1
+        );
+        setData(filteredData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <section className="">
       <nav className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-        {articles.map((article, index) => (
+        {data.map((item) => (
           <div
-            key={index}
+            key={item.id}
             className="flex flex-col gap-3 rounded-md overflow-hidden shadow-md p-1 pb-2"
           >
             <img
               className="transition-transform transform hover:scale-105"
-              src={article.imageUrl}
-              alt="ảnh"
+              src={"./image/i1.jpg"}
+              alt="Ảnh"
             />
+
             <div className="flex flex-col gap-3">
-              <h1 className="text-xl">{article.title}</h1>
+              <h1 className="text-xl">{item.attributes.title_kienthuc}</h1>
               <div className="flex justify-between items-center">
                 <div className="flex gap-3">
                   {" "}
-                  <span className="font-bold">BY {article.author}</span>
+                  <span className="font-bold">BY ADMIN</span>
                   <span className="flex items-center gap-2">
                     <FaCalendar />
-                    <span>{article.date}</span>
+                    <span>{item.attributes.date_kienthuc}</span>
                   </span>
                 </div>
 
-                <button className="inline-flex items-center p-2 bg-slate-600 text-white rounded-md transition-transform transform hover:scale-105">
+                <Link
+                  to=""
+                  className="inline-flex items-center p-2 bg-slate-600 text-white rounded-md transition-transform transform hover:scale-105"
+                >
                   XEM THÊM <span className="ml-2">&#x2192;</span>
-                </button>
+                </Link>
               </div>
             </div>
           </div>

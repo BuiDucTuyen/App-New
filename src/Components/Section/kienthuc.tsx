@@ -32,7 +32,7 @@ const Box: React.FC<BoxProps> = ({ imageSrc, title }) => {
   );
 };
 
-const Detail1: React.FC = () => {
+const Kienthuc: React.FC = () => {
   const boxes = [
     {
       imageSrc: "/image/images.jpg",
@@ -75,7 +75,7 @@ const Detail1: React.FC = () => {
 
   return (
     <div className="container mx-auto mt-8 p-2 text-white">
-      <h1 className="text-3xl text-white mb-10">Tin tức</h1>
+      <h1 className="text-3xl text-white mb-10 font-bold">Kiến thức</h1>
       <div className="flex flex-wrap -m-4">
         {boxes.map((box, index) => (
           <Box key={index} {...box} />
@@ -85,4 +85,4 @@ const Detail1: React.FC = () => {
   );
 };
 
-export default Detail1;
+export default Kienthuc;

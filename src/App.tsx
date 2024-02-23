@@ -4,9 +4,10 @@ import "./App.css";
 import Home from "./Components/Home";
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./Components/Section/Layout";
-import Detail1 from "./Components/Section/secDetail";
 import Detail from "./Components/Section/Detail";
-import Detail2 from "./Components/Section/Detail2";
+
+import Tintuc from "./Components/Section/tintuc";
+import Kienthuc from "./Components/Section/kienthuc";
 
 function App() {
   return (
@@ -23,23 +24,23 @@ function App() {
         path="/TinTuc"
         element={
           <Layout>
-            <Detail1 />
+            <Tintuc />
           </Layout>
         }
       ></Route>
       <Route
-        path="/BaiViet"
+        path="/Kienthuc"
+        element={
+          <Layout>
+            <Kienthuc />
+          </Layout>
+        }
+      ></Route>
+      <Route
+        path="/BaiViet/:id"
         element={
           <Layout>
             <Detail />
-          </Layout>
-        }
-      ></Route>
-      <Route
-        path="/baiviet/:id"
-        element={
-          <Layout>
-            <Detail2 />
           </Layout>
         }
       ></Route>
