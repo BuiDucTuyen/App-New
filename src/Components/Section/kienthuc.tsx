@@ -8,6 +8,14 @@ interface BoxData {
     title_kienthuc: string;
     date_kienthuc: string;
     content_kienthuc: string;
+    img_kienthuc: {
+      data: {
+        id: number;
+        attributes: {
+          url: string; 
+        };
+      }[];
+    };
   };
 }
 
@@ -15,14 +23,15 @@ interface BoxProps {
   title: string;
   date: string;
   id: number;
+  imageUrl: string; 
 }
 
-const Box: React.FC<BoxProps> = ({ title, date, id }) => {
+const Box: React.FC<BoxProps> = ({ title, date, id, imageUrl }) => {
   return (
     <div className="w-full md:w-1/2 lg:w-1/3 p-4">
       <div className=" rounded-md overflow-hidden shadow-md">
         <img
-          src="../image/i1.jpg"
+          src={imageUrl} 
           alt={title}
           className="w-full h-full object-cover"
         />
@@ -46,10 +55,10 @@ const Box: React.FC<BoxProps> = ({ title, date, id }) => {
 };
 
 const Kienthuc: React.FC = () => {
-  const [boxes, setBoxes] = useState<BoxData[]>([]);
+  const [boxes, setBoxes] = useState<BoxData[] | null>(null); 
 
   useEffect(() => {
-    fetch("http://103.141.141.31:1337/api/home-kienthucs")
+    fetch("http://103.141.141.31:1337/api/home-kienthucs?populate=*")
       .then((response) => response.json())
       .then((data) => {
         if (data && data.data) {
@@ -64,16 +73,21 @@ const Kienthuc: React.FC = () => {
   return (
     <div className="container mx-auto mt-8 p-2 text-white">
       <h1 className="text-3xl text-white mb-10 font-bold">Kiến thức</h1>
-      <div className="flex flex-wrap -m-4">
-        {boxes.map((item) => (
-          <Box
-            key={item.id}
-            title={item.attributes.title_kienthuc}
-            date={item.attributes.date_kienthuc}
-            id={item.id}
-          />
-        ))}
-      </div>
+      {boxes === null ? ( 
+        <div>Loading...</div>
+      ) : (
+        <div className="flex flex-wrap -m-4">
+          {boxes.map((item) => (
+            <Box
+              key={item.id}
+              title={item.attributes.title_kienthuc}
+              date={item.attributes.date_kienthuc}
+              id={item.id}
+              imageUrl={item.attributes.img_kienthuc.data[0].attributes.url} 
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
