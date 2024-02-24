@@ -5,9 +5,10 @@ import Home from "./Components/Home";
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./Components/Section/Layout";
 import Detail from "./Components/Section/Detail";
-
 import Tintuc from "./Components/Section/tintuc";
 import Kienthuc from "./Components/Section/kienthuc";
+import Detail_kienthuc from "./Components/Section/Detail_kienthuc";
+import Detail_tintuc from "./Components/Section/Detail_tintuc";
 
 function App() {
   return (
@@ -33,6 +34,22 @@ function App() {
         element={
           <Layout>
             <Kienthuc />
+          </Layout>
+        }
+      ></Route>
+      <Route
+        path="/Kienthuc/:id"
+        element={
+          <Layout>
+            <Detail_kienthuc />
+          </Layout>
+        }
+      ></Route>
+      <Route
+        path="/Tintuc/:id"
+        element={
+          <Layout>
+            <Detail_tintuc />
           </Layout>
         }
       ></Route>

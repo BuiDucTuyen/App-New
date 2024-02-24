@@ -61,7 +61,7 @@ const Sec3: React.FC = () => {
                 </div>
 
                 <Link
-                  to=""
+                  to={`/Kienthuc/${item.id}`}
                   className="inline-flex items-center p-2 bg-slate-600 text-white rounded-md transition-transform transform hover:scale-105"
                 >
                   XEM THÊM <span className="ml-2">&#x2192;</span>
