@@ -26,6 +26,8 @@ const Detail: React.FC = () => {
     fetchData();
   }, [id]);
 
+  console.log(postData);
+  
   return (
     <section className="text-white flex flex-col lg:flex-row justify-between gap-5 px-2">
       <nav className="flex flex-col max-w-full lg:max-w-[70%] text-left gap-5 rounded-md overflow-hidden shadow-md p-1">
