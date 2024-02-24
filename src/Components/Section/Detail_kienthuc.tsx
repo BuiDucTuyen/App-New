@@ -2,19 +2,19 @@ import React, { useState, useEffect } from "react";
 import { FaCalendar } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 
-const Detail: React.FC = () => {
+const Detail_kienthuc: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [postData, setPostData] = useState<{
-    title_home1: string;
-    date_home1: string;
-    content_detail_home1: string;
+    title_kienthuc: string;
+    date_kienthuc: string;
+    content_detail_kienthuc: string;
   } | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://103.141.141.31:1337/api/home-section1s/${id}`
+          `http://103.141.141.31:1337/api/home-kienthucs/${id}`
         );
         const jsonData = await response.json();
         setPostData(jsonData.data.attributes);
@@ -31,18 +31,18 @@ const Detail: React.FC = () => {
       <nav className="flex flex-col max-w-full lg:max-w-[70%] text-left gap-5 rounded-md overflow-hidden shadow-md p-1">
         {postData ? (
           <>
-            <h1 className="text-3xl font-bold ">{postData.title_home1}</h1>
+            <h1 className="text-3xl font-bold ">{postData.title_kienthuc}</h1>
             <div className="flex gap-5">
               <span className="font-bold">BY ADMIN</span>
               <span className="flex items-center gap-2">
                 <FaCalendar />
-                <span>{postData.date_home1}</span>
+                <span>{postData.date_kienthuc}</span>
               </span>
             </div>
 
             <img className="" src="../image/i1.jpg" alt="Ảnh" />
             <span className="max-w-[1000px] text-[#cccccc] text-[17px]">
-              {postData.content_detail_home1}
+              {postData.content_detail_kienthuc}
             </span>
           </>
         ) : (
@@ -62,4 +62,4 @@ const Detail: React.FC = () => {
   );
 };
 
-export default Detail;
+export default Detail_kienthuc;

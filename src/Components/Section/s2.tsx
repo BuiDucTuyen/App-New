@@ -49,7 +49,10 @@ const Sec2: React.FC = () => {
                 alt=""
               />
               <div className="flex flex-col gap-5 md:max-w-[35%]">
-                <Link className="text-2xl lg:text-3xl font-bold" to="">
+                <Link
+                  className="text-2xl lg:text-3xl font-bold"
+                  to={`/Kienthuc/${kienthucData.id}`}
+                >
                   <h1>{kienthucData.attributes.title_kienthuc}</h1>
                 </Link>
 
