@@ -8,6 +8,7 @@ const Detail: React.FC = () => {
     title_home1: string;
     date_home: string;
     content_detail_home1: string;
+    content_home1: string;
   } | null>(null);
 
   useEffect(() => {
@@ -27,7 +28,7 @@ const Detail: React.FC = () => {
   }, [id]);
 
   return (
-    <section className="text-white flex flex-col lg:flex-row justify-between gap-5 px-2">
+    <section className="text-white animate-fadeInDown flex flex-col lg:flex-row justify-between gap-5 px-2">
       <nav className="flex flex-col max-w-full lg:max-w-[70%] text-left gap-5 rounded-md overflow-hidden shadow-md p-1">
         {postData ? (
           <>
@@ -42,7 +43,7 @@ const Detail: React.FC = () => {
 
             <img className="" src="../image/i1.jpg" alt="Ảnh" />
             <span className="max-w-[1000px] text-[#cccccc] text-[17px]">
-              {postData.content_detail_home1}
+              {postData.content_home1}
             </span>
           </>
         ) : (

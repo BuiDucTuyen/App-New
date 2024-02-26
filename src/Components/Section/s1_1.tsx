@@ -7,6 +7,7 @@ interface Item {
   attributes: {
     title_home1: string;
     date_home: string;
+    content_home1: string;
   };
 }
 const Sec1_1: React.FC = () => {
