@@ -6,7 +6,7 @@ const Detail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [postData, setPostData] = useState<{
     title_home1: string;
-    date_home1: string;
+    date_home: string;
     content_detail_home1: string;
   } | null>(null);
 
@@ -14,7 +14,7 @@ const Detail: React.FC = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://103.141.141.31:1337/api/home-section1s/${id}`
+          `http://103.141.141.31:1337/api/home-sections/${id}`
         );
         const jsonData = await response.json();
         setPostData(jsonData.data.attributes);
@@ -36,7 +36,7 @@ const Detail: React.FC = () => {
               <span className="font-bold">BY ADMIN</span>
               <span className="flex items-center gap-2">
                 <FaCalendar />
-                <span>{postData.date_home1}</span>
+                <span>{postData.date_home}</span>
               </span>
             </div>
 

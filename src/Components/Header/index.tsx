@@ -234,7 +234,7 @@ function Header() {
               <img
                 src="http://wolfcapital.vn/wp-content/uploads/2023/10/banner-quang-cao-okxbitgetbybit-2.png"
                 alt="Header Before Ad"
-                className="h-[100px]"
+                className="h-auto"
               />
             </div>
           </div>

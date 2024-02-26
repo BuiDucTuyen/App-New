@@ -8,7 +8,7 @@ const Sec1: React.FC = () => {
     attributes: {
       title_home1: string;
       content_home1: string;
-      date_home1: string;
+      date_home: string;
     };
   } | null>(null);
 
@@ -16,7 +16,7 @@ const Sec1: React.FC = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://103.141.141.31:1337/api/home-section1s/"
+          "http://103.141.141.31:1337/api/home-sections/"
         );
         const jsonData = await response.json();
         setSech1Data(jsonData.data[0]);
@@ -29,7 +29,7 @@ const Sec1: React.FC = () => {
   }, []);
   const item = { id: 1 };
   return (
-    <section className="">
+    <section className="animate-fadeInDown">
       <nav className="flex flex-col lg:flex-row justify-between gap-5 ">
         <div className="flex flex-col max-w-full gap-5 lg:max-w-[55%] text-left rounded-md overflow-hidden shadow-md p-1">
           {sech1Data ? (
@@ -39,7 +39,9 @@ const Sec1: React.FC = () => {
                 src={"./image/i1.jpg"}
                 alt="Ảnh"
               />
-              <h1 className="text-2xl ">{sech1Data.attributes.title_home1}</h1>
+              <h1 className="text-2xl font-bold">
+                {sech1Data.attributes.title_home1}
+              </h1>
               <p className="text-[16px] ">
                 {sech1Data.attributes.content_home1}
               </p>
@@ -47,7 +49,7 @@ const Sec1: React.FC = () => {
                 <span className="font-bold">BY ADMIN</span>
                 <span className="flex items-center gap-2">
                   <FaCalendar />
-                  <span>{sech1Data.attributes.date_home1}</span>
+                  <span>{sech1Data.attributes.date_home}</span>
                 </span>
               </div>
             </Link>
@@ -63,3 +65,4 @@ const Sec1: React.FC = () => {
 };
 
 export default Sec1;
+// data-aos="fade-down"

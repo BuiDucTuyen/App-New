@@ -23,7 +23,7 @@ const TintucBox: React.FC<TintucProps> = ({ title, date, id }) => {
         <img
           src="/image/images.jpg"
           alt={title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform transform hover:scale-110"
         />
         <div className="p-4">
           <Link to={`/Tintuc/${id}`}>
@@ -66,7 +66,7 @@ const Tintuc: React.FC = () => {
   }, []);
 
   return (
-    <div className="container mx-auto mt-8 p-2 text-white">
+    <div className="max-w-[1440px] animate-fadeInDown mx-auto mt-8 p-2 text-white">
       <h1 className="text-3xl text-white mb-10 font-bold">Tin tức</h1>
       <div className="flex flex-wrap -m-4">
         {tintucData.map((item) => (
