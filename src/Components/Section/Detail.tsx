@@ -7,8 +7,10 @@ const Detail: React.FC = () => {
   const [postData, setPostData] = useState<{
     title_home1: string;
     date_home: string;
-    content_detail_home1: string;
+    // content_detail_home1: string;
     content_home1: string;
+    content_detail_home1: Array<{ type: string; children: Array<{ type: string; text: string; bold?: boolean; italic?: boolean }> }>;
+
   } | null>(null);
 
   useEffect(() => {
@@ -27,6 +29,8 @@ const Detail: React.FC = () => {
     fetchData();
   }, [id]);
 
+  // console.log(postData);
+  
   return (
     <section className="text-white animate-fadeInDown flex flex-col lg:flex-row justify-between gap-5 px-2">
       <nav className="flex flex-col max-w-full lg:max-w-[70%] text-left gap-5 rounded-md overflow-hidden shadow-md p-1">
@@ -42,9 +46,20 @@ const Detail: React.FC = () => {
             </div>
 
             <img className="" src="../image/i1.jpg" alt="Ảnh" />
-            <span className="max-w-[1000px] text-[#cccccc] text-[17px]">
+            {/* <span className="max-w-[1000px] text-[#cccccc] text-[17px]">
               {postData.content_home1}
-            </span>
+            </span> */}
+             {postData.content_detail_home1.map((paragraph, index) => (
+              <div key={index} className="max-w-[1000px] text-[#cccccc] text-[17px]">
+                {paragraph.children.map((child, idx) => (
+                  <span key={idx} className={child.bold ? 'font-bold' : child.italic ? 'italic' : ''}>
+                    {child.bold && <br />}
+                    {child.italic && <br />}
+                    {child.text}
+                  </span>
+                ))}
+              </div>
+            ))}
           </>
         ) : (
           <p>Loading...</p>
