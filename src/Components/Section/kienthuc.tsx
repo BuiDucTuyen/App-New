@@ -13,6 +13,11 @@ interface BoxData {
         id: number;
         attributes: {
           url: string; 
+          formats: {
+            thumbnail : {
+              url: string;
+            }
+          }
         };
       }[];
     };
@@ -27,6 +32,8 @@ interface BoxProps {
 }
 
 const Box: React.FC<BoxProps> = ({ title, date, id, imageUrl }) => {
+  console.log(imageUrl);
+  
   return (
     <div className="w-full md:w-1/2 lg:w-1/3 p-4">
       <div className=" rounded-md overflow-hidden shadow-md">
@@ -61,6 +68,7 @@ const Kienthuc: React.FC = () => {
     fetch("http://103.141.141.31:1337/api/home-kienthucs?populate=*")
       .then((response) => response.json())
       .then((data) => {
+        console.log(data); 
         if (data && data.data) {
           setBoxes(data.data);
         }
@@ -83,7 +91,7 @@ const Kienthuc: React.FC = () => {
               title={item.attributes.title_kienthuc}
               date={item.attributes.date_kienthuc}
               id={item.id}
-              imageUrl={item.attributes.img_kienthuc.data[0].attributes.url} 
+              imageUrl={item.attributes.img_kienthuc.data[0].attributes.formats.thumbnail.url} 
             />
           ))}
         </div>
