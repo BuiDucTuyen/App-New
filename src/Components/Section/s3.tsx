@@ -43,7 +43,7 @@ const Sec3: React.FC = () => {
             className="flex flex-col gap-3 rounded-md overflow-hidden shadow-md p-1 pb-2"
           >
             <img
-              className="transition-transform transform hover:scale-105"
+              className="w-full h-full object-cover transition-transform transform hover:scale-110"
               src={"./image/i1.jpg"}
               alt="Ảnh"
             />

@@ -4,16 +4,22 @@ import { Link } from "react-router-dom";
 import Sec1_1 from "./s1_1";
 
 const Sec1: React.FC = () => {
-  const [postData, setPostData] = useState<any>(null);
+  const [sech1Data, setSech1Data] = useState<{
+    attributes: {
+      title_home1: string;
+      content_home1: string;
+      date_home: string;
+    };
+  } | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:1337/api/homes?populate=*"
+          "http://103.141.141.31:1337/api/home-sections/"
         );
-        const data = await response.json();
-        setPostData(data.data);
+        const jsonData = await response.json();
+        setSech1Data(jsonData.data[0]);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -21,33 +27,35 @@ const Sec1: React.FC = () => {
 
     fetchData();
   }, []);
-
+  const item = { id: 1 };
   return (
-    <section className="">
+    <section className="animate-fadeInDown">
       <nav className="flex flex-col lg:flex-row justify-between gap-5 ">
         <div className="flex flex-col max-w-full gap-5 lg:max-w-[55%] text-left rounded-md overflow-hidden shadow-md p-1">
-          {postData &&
-            postData.map((post: any) => (
-              <Link key={post.id} className="flex flex-col gap-5" to="/BaiViet">
-                <img
-                  className="w-full transition-transform transform hover:scale-105"
-                  src={
-                    "http://localhost:1337" +
-                    post.attributes.img.data[0].attributes.url
-                  }
-                  alt="Ảnh"
-                />
-                <h1 className="text-2xl ">{post.attributes.title}</h1>
-                <p className="text-[16px] ">{post.attributes.content}</p>
-                <div className="flex gap-5">
-                  <span className="font-bold">BY ADMIN</span>
-                  <span className="flex items-center gap-2">
-                    <FaCalendar />
-                    <span>{post.attributes.date}</span>
-                  </span>
-                </div>
-              </Link>
-            ))}
+          {sech1Data ? (
+            <Link className="flex flex-col gap-5" to={`/BaiViet/${item.id}`}>
+              <img
+                className="w-full transition-transform transform hover:scale-105"
+                src={"./image/i1.jpg"}
+                alt="Ảnh"
+              />
+              <h1 className="text-2xl font-bold">
+                {sech1Data.attributes.title_home1}
+              </h1>
+              <p className="text-[16px] ">
+                {sech1Data.attributes.content_home1}
+              </p>
+              <div className="flex gap-5">
+                <span className="font-bold">BY ADMIN</span>
+                <span className="flex items-center gap-2">
+                  <FaCalendar />
+                  <span>{sech1Data.attributes.date_home}</span>
+                </span>
+              </div>
+            </Link>
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
 
         <Sec1_1 />
@@ -57,3 +65,4 @@ const Sec1: React.FC = () => {
 };
 
 export default Sec1;
+// data-aos="fade-down"

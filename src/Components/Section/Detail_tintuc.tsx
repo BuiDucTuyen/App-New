@@ -23,12 +23,11 @@ const Detail_kienthuc: React.FC = () => {
         console.error("Error fetching data:", error);
       }
     };
-
     fetchData();
   }, [id]);
   
   return (
-    <section className="text-white flex flex-col lg:flex-row justify-between gap-5 px-2">
+    <section className="text-white animate-fadeInDown flex flex-col lg:flex-row justify-between gap-5 px-2">
       <nav className="flex flex-col max-w-full lg:max-w-[70%] text-left gap-5 rounded-md overflow-hidden shadow-md p-1">
         {postData ? (
           <>

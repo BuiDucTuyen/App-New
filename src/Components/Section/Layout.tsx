@@ -5,7 +5,7 @@ import Logo from "./logo";
 
 export const Layout = ({ children }: any) => {
   return (
-    <main className="bg-headerBg items-center overflow-clip flex flex-col gap-[30px]">
+    <main className="bg-headerBg animate-fadeInDown items-center overflow-clip flex flex-col gap-[30px]">
       <Header />
       <Logo />
       {children}

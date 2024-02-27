@@ -32,7 +32,7 @@ const Sec2: React.FC = () => {
     fetchData();
   }, []);
   return (
-    <section className=" mx-auto">
+    <section className="mx-auto animate-fadeInDown">
       <nav className="flex flex-col gap-5">
         <h1 className="text-3xl text-left font-bold">Kiến thức</h1>
         <img
